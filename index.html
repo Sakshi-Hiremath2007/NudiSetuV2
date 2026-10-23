@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NudiSetu | Learn Kannada</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="#home"
+        ><span class="logo">ನು</span
+        ><span><b>NudiSetu</b><small>Bridge to Kannada</small></span></a
+      >
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+      <nav id="site-menu">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#learn">Lessons</a>
+        <a href="#basics">Kannada Basics</a>
+        <a href="#quiz">Quizzes</a>
+        <a href="#speaking">Speaking Studio</a>
+        <a href="#rewards">Rewards</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="button" href="#learn">Start Learning ↗</a>
+    </header>
+
+    <main id="home">
+      <section class="hero wrap">
+        <div>
+          <p class="eyebrow">YOUR KANNADA JOURNEY STARTS HERE</p>
+          <h1>Learn Kannada.<br /><span>Connect with Karnataka.</span></h1>
+          <p>
+            Learn everyday Kannada with useful phrases, interactive quizzes and
+            speaking practice.
+          </p>
+          <a class="button" href="#learn">Explore Lessons</a>
+          <a class="button pale" href="#basics">Start with Basics</a>
+          <p class="welcome">ನಮಸ್ಕಾರ! Namaskara — Hello and welcome!</p>
+        </div>
+        <div class="hero-art">
+          <div class="sun"></div>
+          <div class="hero-circle">ನು</div>
+          <span class="float one">ಅ ಆ ಇ ಈ</span
+          ><span class="float two">ನಮಸ್ಕಾರ</span>
+        </div>
+      </section>
+
+      <section class="wrap" id="dashboard">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR PROGRESS</p>
+            <h2>Learning Dashboard</h2>
+          </div>
+          <p>Every small step counts!</p>
+        </div>
+        <div class="stats">
+          <article>
+            📚<small>Categories explored</small
+            ><b id="learning-progress">0 of 12</b>
+          </article>
+          <article>
+            🎯<small>Latest quiz score</small
+            ><b id="quiz-score">Not attempted</b>
+          </article>
+          <article>
+            🔥<small>Learning streak</small><b id="streak">0 days</b>
+          </article>
+          <article>
+            🏅<small>Badges earned</small><b id="badge-count">0</b>
+          </article>
+        </div>
+        <div class="progress-card">
+          <div>
+            <b>My learning journey</b
+            ><span id="progress-label">0% complete</span>
+          </div>
+          <div class="track"><div id="progress-fill"></div></div>
+        </div>
+      </section>
+
+      <section class="wrap" id="basics">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">START HERE</p>
+            <h2>Kannada Basics</h2>
+          </div>
+          <p>
+            Tap a character to hear it if your browser supports Kannada speech.
+          </p>
+        </div>
+        <div class="basics-grid">
+          <article class="card">
+            <h3>ಸ್ವರಗಳು · Vowels</h3>
+            <div id="vowels" class="letters"></div>
+          </article>
+          <article class="card">
+            <h3>ವ್ಯಂಜನಗಳು · Consonants</h3>
+            <div id="consonants" class="letters"></div>
+          </article>
+          <article class="card">
+            <h3>ಸಂಖ್ಯೆಗಳು · Numbers</h3>
+            <div id="numbers" class="letters"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap" id="learn">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORE & PRACTISE</p>
+            <h2>Choose a Lesson</h2>
+          </div>
+          <p>Explore 12 everyday Kannada categories.</p>
+        </div>
+        <div id="category-grid" class="categories"></div>
+        <article id="lesson-panel" class="card lesson" hidden>
+          <button id="close-lesson" class="close">✕</button>
+          <p class="eyebrow">YOUR LESSON</p>
+          <h3 id="lesson-title"></h3>
+          <p id="lesson-description"></p>
+          <div id="lesson-phrases" class="phrases"></div>
+          <button id="complete-lesson" class="button">
+            Mark Lesson Explored ✓
+          </button>
+        </article>
+      </section>
+
+      <section class="quiz-section" id="quiz">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TEST WHAT YOU KNOW</p>
+              <h2>Kannada Quiz Levels</h2>
+            </div>
+            <p>Score at least 3 out of 5 to unlock the next level.</p>
+          </div>
+          <div class="levels">
+            <article class="level" id="level-card-1">
+              <small>LEVEL 1</small>
+              <h3>Beginner</h3>
+              <div class="emoji">🌱</div>
+              <p>Greetings and everyday words.</p>
+              <p class="level-status">🔓 Available now</p>
+              <button class="button start-level" data-level="1">
+                Start Quiz →
+              </button>
+            </article>
+            <article class="level locked" id="level-card-2">
+              <small>LEVEL 2</small>
+              <h3>Elementary</h3>
+              <div class="emoji">📖</div>
+              <p>Daily conversations and useful phrases.</p>
+              <p class="level-status">🔒 Solve Level 1 to unlock</p>
+              <button class="button start-level" data-level="2" disabled>
+                Locked
+              </button>
+            </article>
+            <article class="level locked" id="level-card-3">
+              <small>LEVEL 3</small>
+              <h3>Intermediate</h3>
+              <div class="emoji">🧠</div>
+              <p>Sentence meanings and natural replies.</p>
+              <p class="level-status">🔒 Solve Level 2 to unlock</p>
+              <button class="button start-level" data-level="3" disabled>
+                Locked
+              </button>
+            </article>
+            <article class="level locked" id="level-card-4">
+              <small>LEVEL 4</small>
+              <h3>Advanced</h3>
+              <div class="emoji">🏆</div>
+              <p>Grammar and tricky situations.</p>
+              <p class="level-status">🔒 Solve Level 3 to unlock</p>
+              <button class="button start-level" data-level="4" disabled>
+                Locked
+              </button>
+            </article>
+          </div>
+          <article id="quiz-box" class="card quiz-box" hidden>
+            <div class="quiz-meta">
+              <b id="quiz-level-label">LEVEL 1</b
+              ><span id="quiz-progress">QUESTION 1 OF 5</span>
+            </div>
+            <div class="track"><div id="question-fill"></div></div>
+            <h3 id="quiz-question"></h3>
+            <div id="quiz-options" class="options"></div>
+            <p id="quiz-feedback" aria-live="polite"></p>
+            <div class="quiz-controls">
+              <button id="exit-quiz" class="button pale">Exit Quiz</button
+              ><button id="next-question" class="button" hidden>
+                Next Question →
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap" id="speaking">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SPEAK WITH CONFIDENCE</p>
+            <h2>Kannada Speaking Studio</h2>
+          </div>
+          <p>Listen, repeat and practise.</p>
+        </div>
+        <div class="speaking-grid">
+          <article class="card speaking-card">
+            <div class="emoji">🎙️</div>
+            <h3 id="speak-kannada" lang="kn">ನಮಸ್ಕಾರ</h3>
+            <p id="speak-english">Hello</p>
+            <small id="speak-transliteration">Namaskara</small>
+            <div class="controls">
+              <button id="previous-phrase" class="button pale">
+                ← Previous</button
+              ><button id="listen-phrase" class="button">🔊 Listen</button
+              ><button id="next-phrase" class="button pale">Next →</button>
+            </div>
+          </article>
+          <article class="card tip">
+            <p class="eyebrow">SPEAKING TIP</p>
+            <h3>Practise a little every day</h3>
+            <p>
+              Listen carefully, repeat slowly, and try saying the phrase without
+              looking.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap" id="word-day">
+        <div class="daily">
+          <div>
+            <p class="eyebrow">WORD OF THE DAY</p>
+            <h2 id="word-kannada" lang="kn">ಧನ್ಯವಾದಗಳು</h2>
+            <p id="word-english">Thank you</p>
+            <small id="word-transliteration">Dhanyavaadagalu</small>
+          </div>
+          <button id="new-word" class="button pale">New Word ↻</button>
+        </div>
+      </section>
+
+      <section class="wrap" id="rewards">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CELEBRATE PROGRESS</p>
+            <h2>My Badges</h2>
+          </div>
+          <p>Earn badges as you learn.</p>
+        </div>
+        <div class="badges">
+          <article class="badge" data-badge="first">
+            <span>🌱</span><b>First Steps</b><small>Explore one category</small
+            ><em>Locked</em>
+          </article>
+          <article class="badge" data-badge="five">
+            <span>📚</span><b>Curious Learner</b
+            ><small>Explore five categories</small><em>Locked</em>
+          </article>
+          <article class="badge" data-badge="all">
+            <span>🗺️</span><b>Explorer</b
+            ><small>Explore all 12 categories</small><em>Locked</em>
+          </article>
+          <article class="badge" data-badge="quiz">
+            <span>🎯</span><b>Quiz Star</b><small>Pass a quiz level</small
+            ><em>Locked</em>
+          </article>
+        </div>
+        <button id="reset-progress" class="button pale reset">
+          Reset My Progress
+        </button>
+      </section>
+
+      <section class="wrap about" id="about">
+        <p class="eyebrow">ABOUT NUDISETU</p>
+        <h2>A little Kannada goes a long way.</h2>
+        <p>
+          NudiSetu helps learners practise everyday Kannada through short
+          lessons, quizzes and speaking prompts.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#home"
+        ><span class="logo">ನು</span
+        ><span><b>NudiSetu</b><small>Bridge to Kannada</small></span></a
+      >
+      <p>Learn a word. Start a conversation. Build a connection.</p>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <!-- NudiSetu AI Chatbot -->
+    <button
+      id="chat-toggle"
+      class="chat-toggle"
+      type="button"
+      aria-label="Open Kannada AI assistant"
+    >
+      💬
+    </button>
+
+    <section
+      id="chat-widget"
+      class="chat-widget"
+      aria-label="Kannada AI assistant"
+      hidden
+    >
+      <div class="chat-header">
+        <div>
+          <strong>NudiBot 🤖</strong>
+          <small>Your friendly Kannada tutor 🌿</small>
+        </div>
+        <button id="chat-close" type="button" aria-label="Close chat">✕</button>
+      </div>
+
+      <div id="chat-messages" class="chat-messages" aria-live="polite">
+        <div class="chat-message bot-message">
+          Namaskara! 👋 I'm your Kannada learning assistant. Ask me anything
+          about Kannada!
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Ask me something..."
+          maxlength="2000"
+          autocomplete="off"
+          required
+        />
+        <button id="chat-send" type="submit">Send</button>
+      </form>
+    </section>
+    <!-- End NudiSetu AI Chatbot -->
+  </body>
+</html>
